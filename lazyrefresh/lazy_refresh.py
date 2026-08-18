@@ -296,29 +296,3 @@ class LazyRefresh:
         for this_method, next_update in self._next_update.items():
             if next_update:
                 self._next_update[this_method] = time.time()
-
-
-if __name__ == '__main__':
-    class LazyTest(LazyRefresh):
-        def __init__(self):
-            super().__init__()
-
-            self.first_attribute = ''
-            self.second_attribute = False
-            self._register_refresh_method(self.test_method, refresh_frequency=-1, stop_when_set=True)
-
-        def test_method(self):
-            print('calling refresh method')
-            if self.peek('second_attribute') is True:
-                result = False
-            else:
-                result = True
-            return {'second_attribute': result}
-
-
-    test = LazyTest()
-
-    print(test.first_attribute, test.second_attribute)
-    print(test.first_attribute, test.second_attribute)
-    test.first_attribute = '123'
-    print(test.first_attribute, test.second_attribute)
