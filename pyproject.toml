@@ -1,0 +1,18 @@
+[project]
+name = "lazyrefresh"
+version = "0.1.2"
+description = "Near-realtime attribute refresh system with dynamic interception and safe concurrent refresh handling."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name="Troy Hoffman", email="troywhoffman@gmail.com" }
+]
+
+[project.urls]
+Homepage = "https://github.com/troyhoffman/lazyrefresh"
+Issues = "https://github.com/troyhoffman/lazyrefresh/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
